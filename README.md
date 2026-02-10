@@ -1,0 +1,163 @@
+[index.html](https://github.com/user-attachments/files/25199941/index.html)
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Solo algo sincero</title>
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background: linear-gradient(135deg, #ffdde1, #ee9ca7);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Segoe UI', sans-serif;
+        overflow: hidden;
+    }
+
+    .card {
+        background: white;
+        width: 90%;
+        max-width: 420px;
+        padding: 30px;
+        border-radius: 25px;
+        text-align: center;
+        box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+        animation: fadeIn 1s ease;
+    }
+
+    h1, p {
+        color: #333;
+    }
+
+    button {
+        margin-top: 25px;
+        padding: 12px 25px;
+        border: none;
+        border-radius: 30px;
+        background: #ff5f7e;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    button:hover {
+        transform: scale(1.05);
+        background: #ff3f68;
+    }
+
+    .secondary {
+        background: #ffd1d9;
+        color: #ff3f68;
+    }
+
+    .heart {
+        font-size: 50px;
+        animation: heartbeat 1.5s infinite;
+    }
+
+    .shake {
+        animation: shake 0.4s;
+    }
+
+    @keyframes heartbeat {
+        0%, 100% { transform: scale(1); }
+        50% { transform: scale(1.2); }
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes float {
+        0% { transform: translateY(0); opacity: 1; }
+        100% { transform: translateY(-200px); opacity: 0; }
+    }
+
+    @keyframes shake {
+        0% { transform: translateX(0); }
+        25% { transform: translateX(-5px); }
+        50% { transform: translateX(5px); }
+        75% { transform: translateX(-5px); }
+        100% { transform: translateX(0); }
+    }
+</style>
+</head>
+<body>
+
+<div class="card" id="content">
+    <h1>Esto no es un mensaje normal…</h1>
+    <button onclick="next1()">Ok, ahora tengo curiosidad 👀</button>
+</div>
+
+<script>
+function next1() {
+    content.innerHTML = `
+        <div class="heart">❤️</div>
+        <p>Desde el primer momento hubo algo…<br>
+        y no quise que se quedara solo en mi cabeza.</p>
+        <button onclick="next2()">¿Qué fue?</button>
+    `;
+}
+
+function next2() {
+    createStars();
+    content.innerHTML = `
+        <p>No sé si alguien ya tiene tu atención…</p>
+        <p>y sinceramente, eso está bien.</p>
+        <button onclick="next3()">Continúa</button>
+        <button class="secondary" onclick="tease(this)">Prefiero dejarlo aquí</button>
+    `;
+}
+
+function tease(btn) {
+    const card = document.querySelector('.card');
+    card.classList.add('shake');
+
+    const originalText = btn.innerText;
+    btn.innerText = "Ey 😌 no tan rápido…";
+
+    setTimeout(() => {
+        btn.innerText = "Anda… sigue leyendo 🙈";
+    }, 700);
+
+    setTimeout(() => {
+        btn.innerText = originalText;
+        card.classList.remove('shake');
+    }, 1600);
+}
+
+function next3() {
+    content.innerHTML = `
+        <p>Pero si no…</p>
+        <p>
+        confieso que me gustaría saber<br>
+        <strong>qué se siente estar cerca de ti.</strong>
+        </p>
+        <p style="font-size:13px;color:#777;margin-top:15px;">
+        Sin presión.<br>
+        Solo sinceridad.
+        </p>
+        <p style="margin-top:20px;">— Alguien que no se quedó con la duda</p>
+    `;
+}
+
+function createStars() {
+    for (let i = 0; i < 15; i++) {
+        let star = document.createElement("span");
+        star.innerHTML = "✨";
+        star.style.position = "absolute";
+        star.style.left = Math.random() * 100 + "vw";
+        star.style.bottom = "0px";
+        star.style.animation = "float 4s ease forwards";
+        document.body.appendChild(star);
+        setTimeout(() => star.remove(), 4000);
+    }
+}
+</script>
+
+</body>
+</html>
