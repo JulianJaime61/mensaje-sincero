@@ -14,9 +14,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function step2() {
         content.innerHTML = `
-            <p>Desde el primer día pensé algo sencillo:</p>
-            <p><strong>“Se ve una persona linda… y tranquila.”</strong></p>
-            <p class="soft">De esas que se notan, sin hacer ruido.</p>
+            <p>La primera vez que te vi pensé:</p>
+            p><strong>“Ok… ella tiene algo.”</strong></p>
+            <p class="soft">De esas personas que llaman la atención sin darse cuenta.</p>
             <button id="next2">Sigue</button>
         `;
         document.getElementById("next2").addEventListener("click", step3);
@@ -87,3 +87,4 @@ function abrirWhatsApp() {
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, "_blank");
 }
+
