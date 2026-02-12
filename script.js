@@ -6,7 +6,8 @@ document.addEventListener("DOMContentLoaded", () => {
         content.innerHTML = `
             <p class="soft">Ahora sí… siendo honesto.</p>
             <p>No soy muy bueno para empezar conversaciones así,</p>
-            <p>pero tampoco quería quedarme con la duda.</p>
+            <p>pero esta vez quise hacerlo diferente.</p>
+            <p class="soft">Y sí… esto lo hice especialmente para ti, Gaby 😊</p>
             <button id="next1">Continúa</button>
         `;
         document.getElementById("next1").addEventListener("click", step2);
@@ -16,9 +17,12 @@ document.addEventListener("DOMContentLoaded", () => {
         content.innerHTML = `
             <p>La primera vez que te vi pensé:</p>
             <p><strong>“Ok… ella tiene algo.”</strong></p>
-            <p class="soft">De esas personas que llaman la atención sin darse cuenta.</p>
+            <p class="soft">
+                Algo que hace que mis ojos<br>
+                no puedan evitar buscarla.
+            </p>
             <button id="next2">Sigue</button>
-        `;
+    `;
         document.getElementById("next2").addEventListener("click", step3);
     }
 
@@ -87,5 +91,6 @@ function abrirWhatsApp() {
     const url = `https://wa.me/${numero}?text=${encodeURIComponent(mensaje)}`;
     window.open(url, "_blank");
 }
+
 
 
