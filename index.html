@@ -1,22 +1,55 @@
 <!DOCTYPE html>
 <html lang="es">
-
 <head>
-    <meta charset="UTF-8">
-    <title>No es soporte 😅</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>No es soporte 😅</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
+  <div class="bg">
+    <div class="blob b1"></div>
+    <div class="blob b2"></div>
+    <div class="blob b3"></div>
+    <div class="grain"></div>
+  </div>
 
-    <div class="card" id="content">
-        <h1>Antes de empezar…</h1>
-        <p>Esto NO es soporte de IT 😅</p>
-        <p>No hay contraseñas, ni monitores que no prendan.</p>
-        <button id="startBtn">Ok… menos mal 😌</button>
-    </div>
+  <canvas id="fx"></canvas>
 
-    <script src="script.js"></script>
+  <main class="wrap">
+    <section class="card" id="card" aria-live="polite">
+      <header class="topbar">
+        <div class="tag" id="tag">No es soporte 😅</div>
+
+        <div class="meter" aria-label="Progreso">
+          <div class="meterTrack">
+            <div class="meterFill" id="meterFill"></div>
+          </div>
+          <div class="meterText" id="meterText">1/5</div>
+        </div>
+      </header>
+
+      <div class="content" id="content">
+        <h1 class="title">Antes de empezar…</h1>
+        <p class="subtitle">Esto es un mini detalle… y sí, es para ti 😌✨</p>
+        <p class="muted">Y para que quede claro: NO es soporte de IT 😅</p>
+        <p class="muted">No hay contraseñas, ni monitores rebeldes.</p>
+
+        <button class="btn primary" id="startBtn">
+          Ok… menos mal 😌
+          <span class="btnGlow"></span>
+        </button>
+
+        <p class="miniHint">Tip: toca el botón… se siente “vivo” ✨</p>
+      </div>
+
+      <footer class="footer">
+        <span class="mini" id="footerMini">Hecho con calma (y con buena intención) 🤍</span>
+      </footer>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
 </body>
-
 </html>
